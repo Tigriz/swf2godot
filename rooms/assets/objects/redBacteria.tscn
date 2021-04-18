@@ -1,0 +1,390 @@
+[gd_scene load_steps=110 format=2]
+
+[ext_resource path="res://scripts/bac_game/Area2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0010.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0011.png" type="Texture" id=3]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0012.png" type="Texture" id=4]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0004.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0007.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0006.png" type="Texture" id=7]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0001.png" type="Texture" id=8]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0002.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0003.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0005.png" type="Texture" id=11]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0009.png" type="Texture" id=12]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0008.png" type="Texture" id=13]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0036.png" type="Texture" id=14]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0022.png" type="Texture" id=15]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0014.png" type="Texture" id=16]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0021.png" type="Texture" id=17]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0028.png" type="Texture" id=18]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0029.png" type="Texture" id=19]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0034.png" type="Texture" id=20]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0013.png" type="Texture" id=21]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0024.png" type="Texture" id=22]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0026.png" type="Texture" id=23]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0018.png" type="Texture" id=24]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0030.png" type="Texture" id=25]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0031.png" type="Texture" id=26]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0033.png" type="Texture" id=27]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0017.png" type="Texture" id=28]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0015.png" type="Texture" id=29]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0023.png" type="Texture" id=30]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0027.png" type="Texture" id=31]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0032.png" type="Texture" id=32]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0037.png" type="Texture" id=33]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0035.png" type="Texture" id=34]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0016.png" type="Texture" id=35]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0019.png" type="Texture" id=36]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0020.png" type="Texture" id=37]
+[ext_resource path="res://assets/sprites/bac_game/redBacteria0025.png" type="Texture" id=38]
+[ext_resource path="res://assets/sprites/bac_game/tile_empty.png" type="Texture" id=39]
+[ext_resource path="res://assets/sprites/bac_game/emotion0001.png" type="Texture" id=40]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0025.png" type="Texture" id=41]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0014.png" type="Texture" id=42]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0002.png" type="Texture" id=43]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0009.png" type="Texture" id=44]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0008.png" type="Texture" id=45]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0015.png" type="Texture" id=46]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0019.png" type="Texture" id=47]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0029.png" type="Texture" id=48]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0016.png" type="Texture" id=49]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0006.png" type="Texture" id=50]
+[ext_resource path="res://assets/sprites/bac_game/redBacteriaShadow0001.png" type="Texture" id=51]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0004.png" type="Texture" id=52]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0026.png" type="Texture" id=53]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0011.png" type="Texture" id=54]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0022.png" type="Texture" id=55]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0031.png" type="Texture" id=56]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0032.png" type="Texture" id=57]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0003.png" type="Texture" id=58]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0020.png" type="Texture" id=59]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0005.png" type="Texture" id=60]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0037.png" type="Texture" id=61]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0017.png" type="Texture" id=62]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0018.png" type="Texture" id=63]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0023.png" type="Texture" id=64]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0033.png" type="Texture" id=65]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0021.png" type="Texture" id=66]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0010.png" type="Texture" id=67]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0028.png" type="Texture" id=68]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0013.png" type="Texture" id=69]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0012.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0035.png" type="Texture" id=71]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0034.png" type="Texture" id=72]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0036.png" type="Texture" id=73]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0027.png" type="Texture" id=74]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0001.png" type="Texture" id=75]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0007.png" type="Texture" id=76]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0030.png" type="Texture" id=77]
+[ext_resource path="res://assets/sprites/bac_game/greenBacteria0024.png" type="Texture" id=78]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0013.png" type="Texture" id=79]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0022.png" type="Texture" id=80]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0008.png" type="Texture" id=81]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0002.png" type="Texture" id=82]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0019.png" type="Texture" id=83]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0009.png" type="Texture" id=84]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0003.png" type="Texture" id=85]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0007.png" type="Texture" id=86]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0011.png" type="Texture" id=87]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0015.png" type="Texture" id=88]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0006.png" type="Texture" id=89]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0016.png" type="Texture" id=90]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0017.png" type="Texture" id=91]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0018.png" type="Texture" id=92]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0020.png" type="Texture" id=93]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0005.png" type="Texture" id=94]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0021.png" type="Texture" id=95]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0004.png" type="Texture" id=96]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0012.png" type="Texture" id=97]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0001.png" type="Texture" id=98]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0014.png" type="Texture" id=99]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0023.png" type="Texture" id=100]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0024.png" type="Texture" id=101]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0010.png" type="Texture" id=102]
+[ext_resource path="res://assets/sprites/bac_game/redContaminated0025.png" type="Texture" id=103]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 75 ), ExtResource( 43 ), ExtResource( 58 ), ExtResource( 52 ), ExtResource( 60 ), ExtResource( 50 ), ExtResource( 76 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 67 ), ExtResource( 54 ), ExtResource( 70 ), ExtResource( 69 ), ExtResource( 42 ), ExtResource( 46 ), ExtResource( 49 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 47 ), ExtResource( 59 ), ExtResource( 66 ), ExtResource( 55 ), ExtResource( 64 ), ExtResource( 78 ), ExtResource( 41 ), ExtResource( 53 ), ExtResource( 74 ), ExtResource( 68 ), ExtResource( 48 ), ExtResource( 77 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 65 ), ExtResource( 72 ), ExtResource( 71 ), ExtResource( 73 ), ExtResource( 61 ) ],
+"loop": true,
+"name": "green",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 21 ), ExtResource( 16 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 28 ), ExtResource( 24 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 17 ), ExtResource( 15 ), ExtResource( 30 ), ExtResource( 22 ), ExtResource( 38 ), ExtResource( 23 ), ExtResource( 31 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 32 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 34 ), ExtResource( 14 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "red",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 103 ), ExtResource( 101 ), ExtResource( 100 ), ExtResource( 80 ), ExtResource( 95 ), ExtResource( 93 ), ExtResource( 83 ), ExtResource( 92 ), ExtResource( 91 ), ExtResource( 90 ), ExtResource( 88 ), ExtResource( 99 ), ExtResource( 79 ), ExtResource( 97 ), ExtResource( 87 ), ExtResource( 102 ), ExtResource( 84 ), ExtResource( 81 ), ExtResource( 86 ), ExtResource( 89 ), ExtResource( 94 ), ExtResource( 96 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 98 ) ],
+"loop": false,
+"name": "contaminated",
+"speed": 25.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 40 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=3]
+resource_name = "contaminated"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bacteria:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.1, 1.1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bacteria:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -54 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bacteria:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "contaminated" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bacteria/face:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("bacteria:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "end_move"
+tracks/0/type = "value"
+tracks/0/path = NodePath("bacteria:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bacteria:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -2 ), Vector2( 0, -6 ), Vector2( 0, -10 ), Vector2( 0, -14 ), Vector2( 0, -18 ), Vector2( 0, -22 ), Vector2( 0, -26 ), Vector2( 0, -30 ), Vector2( 0, -34 ), Vector2( 0, -38 ), Vector2( 0, -40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bacteria:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "red" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bacteria/face:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "value"
+tracks/0/path = NodePath("bacteria:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bacteria:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bacteria/face:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bacteria:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "red" ]
+}
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("bacteria:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bacteria:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -40 ), Vector2( 0, -36 ), Vector2( 0, -32 ), Vector2( 0, -28 ), Vector2( 0, -26 ), Vector2( 0, -22 ), Vector2( 0, -18 ), Vector2( 0, -14 ), Vector2( 0, -10 ), Vector2( 0, -6.00002 ), Vector2( 0, -2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bacteria/face:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("bacteria:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "red" ]
+}
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="bacteria" type="AnimatedSprite" parent="."]
+position = Vector2( 0, -54 )
+scale = Vector2( 1.1, 1.1 )
+frames = SubResource( 1 )
+animation = "contaminated"
+frame = 24
+playing = true
+
+[node name="face" type="AnimatedSprite" parent="bacteria"]
+visible = false
+position = Vector2( 0, 18 )
+frames = SubResource( 2 )
+
+[node name="shadow" type="Sprite" parent="bacteria"]
+show_behind_parent = true
+position = Vector2( 0, 70 )
+texture = ExtResource( 51 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, -40 )
+script = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PoolVector2Array( -3.65858, 53.1947, -20.6675, 51.9347, -37.0465, 42.4853, -43.3461, 29.8861, -43.3461, 2.16786, -38.3064, -14.8411, -25.7072, -35.6298, -13.108, -47.599, 8.94063, -52.0087, 17.7601, -45.0792, 25.9496, -34.9998, 36.0289, -12.9512, 38.5488, -2.87182, 42.3285, 25.4764, 35.399, 43.7453, 17.1301, 51.3048 )
+
+[node name="tile" type="Sprite" parent="."]
+show_behind_parent = true
+texture = ExtResource( 39 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "idle"
+anims/contaminated = SubResource( 3 )
+anims/end_move = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/start_move = SubResource( 6 )
+
+[connection signal="input_event" from="Area2D" to="Area2D" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="Area2D" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="Area2D" method="_on_Area2D_mouse_exited"]
+[connection signal="animation_finished" from="AnimationPlayer" to="Area2D" method="_on_AnimationPlayer_animation_finished"]

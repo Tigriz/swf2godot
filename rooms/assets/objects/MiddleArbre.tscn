@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/sprites/chimbo_wedding/bigArbre.png" type="Texture" id=1]
+
+[node name="MidldeArbre" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.62, 0.62 )
+texture = ExtResource( 1 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -46.7647, 275.949, 46.5748, 275.949, 48.2566, 341.539, -48.4465, 344.061 )

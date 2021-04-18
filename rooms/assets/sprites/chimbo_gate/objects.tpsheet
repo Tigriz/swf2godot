@@ -1,0 +1,1632 @@
+{
+	"textures": [
+		{
+			"image": "objects-0.png",
+			"size": {
+				"w": 1772,
+				"h": 1747
+			},
+			"sprites": [
+				{
+					"filename": "rock2.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 1750,
+						"h": 1725
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-1.png",
+			"size": {
+				"w": 1770,
+				"h": 1739
+			},
+			"sprites": [
+				{
+					"filename": "rock5.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 1748,
+						"h": 1717
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-2.png",
+			"size": {
+				"w": 2024,
+				"h": 2003
+			},
+			"sprites": [
+				{
+					"filename": "Rock4.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 1612,
+						"h": 1456
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "round_tree.png",
+					"region": {
+						"x": 1635,
+						"y": 11,
+						"w": 372,
+						"h": 1293
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "portailOmbre.png",
+					"region": {
+						"x": 1635,
+						"y": 1316,
+						"w": 363,
+						"h": 419
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 22
+					}
+				},
+				{
+					"filename": "brown_herb.png",
+					"region": {
+						"x": 11,
+						"y": 1479,
+						"w": 921,
+						"h": 124
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "door.png",
+					"region": {
+						"x": 944,
+						"y": 1479,
+						"w": 408,
+						"h": 512
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 1
+					}
+				},
+				{
+					"filename": "socle.png",
+					"region": {
+						"x": 1364,
+						"y": 1747,
+						"w": 420,
+						"h": 236
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "big_carrot0077.png",
+					"region": {
+						"x": 1796,
+						"y": 1747,
+						"w": 217,
+						"h": 242
+					},
+					"margin": {
+						"x": 0,
+						"y": 22,
+						"w": 0,
+						"h": 22
+					}
+				},
+				{
+					"filename": "big_carrot0078.png",
+					"region": {
+						"x": 1364,
+						"y": 1479,
+						"w": 217,
+						"h": 254
+					},
+					"margin": {
+						"x": 0,
+						"y": 10,
+						"w": 0,
+						"h": 10
+					}
+				},
+				{
+					"filename": "plot.png",
+					"region": {
+						"x": 11,
+						"y": 1615,
+						"w": 309,
+						"h": 349
+					},
+					"margin": {
+						"x": 0,
+						"y": 1,
+						"w": 0,
+						"h": 1
+					}
+				},
+				{
+					"filename": "bacdebtext.png",
+					"region": {
+						"x": 332,
+						"y": 1615,
+						"w": 267,
+						"h": 111
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "big_carrot0079.png",
+					"region": {
+						"x": 611,
+						"y": 1615,
+						"w": 217,
+						"h": 264
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "big_carrot0080.png",
+					"region": {
+						"x": 332,
+						"y": 1738,
+						"w": 217,
+						"h": 254
+					},
+					"margin": {
+						"x": 0,
+						"y": 10,
+						"w": 0,
+						"h": 10
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-3.png",
+			"size": {
+				"w": 1965,
+				"h": 1467
+			},
+			"sprites": [
+				{
+					"filename": "info_stone.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 1943,
+						"h": 1445
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-4.png",
+			"size": {
+				"w": 2042,
+				"h": 2001
+			},
+			"sprites": [
+				{
+					"filename": "pine_tree.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 749,
+						"h": 1979
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "rock1.png",
+					"region": {
+						"x": 772,
+						"y": 11,
+						"w": 1259,
+						"h": 1948
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-5.png",
+			"size": {
+				"w": 1488,
+				"h": 1968
+			},
+			"sprites": [
+				{
+					"filename": "screen.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 1332,
+						"h": 1124
+					},
+					"margin": {
+						"x": 0,
+						"y": 1,
+						"w": 1,
+						"h": 1
+					}
+				},
+				{
+					"filename": "rock0.png",
+					"region": {
+						"x": 11,
+						"y": 1147,
+						"w": 836,
+						"h": 810
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				},
+				{
+					"filename": "portail.png",
+					"region": {
+						"x": 859,
+						"y": 1147,
+						"w": 408,
+						"h": 512
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 1
+					}
+				},
+				{
+					"filename": "big_carrot0081.png",
+					"region": {
+						"x": 859,
+						"y": 1671,
+						"w": 217,
+						"h": 242
+					},
+					"margin": {
+						"x": 0,
+						"y": 22,
+						"w": 0,
+						"h": 22
+					}
+				},
+				{
+					"filename": "big_carrot0001.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0002.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0003.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0004.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0005.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0006.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0007.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0008.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0009.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0010.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0011.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0012.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0013.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0014.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0015.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0016.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0017.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0018.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0019.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0020.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0021.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0022.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0023.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0024.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0025.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0026.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0027.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0028.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0029.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0030.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0031.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0032.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0033.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0034.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0035.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0036.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0037.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0038.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0039.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0040.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0041.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0042.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0043.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0044.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0045.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0046.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0047.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0048.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0049.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0050.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0051.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0052.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0053.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0054.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0055.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0056.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0057.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0058.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0059.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0060.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0061.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0062.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0063.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0064.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0065.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0066.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0067.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0068.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0069.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0070.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0071.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0072.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0073.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0074.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0075.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0076.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0082.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0083.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0084.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0085.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "big_carrot0086.png",
+					"region": {
+						"x": 1088,
+						"y": 1671,
+						"w": 217,
+						"h": 231
+					},
+					"margin": {
+						"x": 0,
+						"y": 33,
+						"w": 0,
+						"h": 33
+					}
+				},
+				{
+					"filename": "bacprotext.png",
+					"region": {
+						"x": 1279,
+						"y": 1147,
+						"w": 198,
+						"h": 179
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		},
+		{
+			"image": "objects-6.png",
+			"size": {
+				"w": 824,
+				"h": 1179
+			},
+			"sprites": [
+				{
+					"filename": "rock3.png",
+					"region": {
+						"x": 11,
+						"y": 11,
+						"w": 802,
+						"h": 1157
+					},
+					"margin": {
+						"x": 0,
+						"y": 0,
+						"w": 0,
+						"h": 0
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:6131c0f93efad6a24cd48133d85109a4:e8578d66f1a66ce81ba253ca297c5c17:64b73fcf8319d8da7bea054fe2d9bb5f$"
+	}
+}

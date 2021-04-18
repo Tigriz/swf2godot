@@ -1,0 +1,429 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://assets/sprites/chimbo_gate/screen.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/chimbo_gate/reflet.png" type="Texture" id=2]
+[ext_resource path="res://scripts/chimbo_gate/Screen.gd" type="Script" id=3]
+[ext_resource path="res://assets/sprites/chimbo_gate/dot.png" type="Texture" id=70]
+[ext_resource path="res://assets/sprites/chimbo_gate/whitebar.png" type="Texture" id=71]
+
+[sub_resource type="Animation" id=1]
+resource_name = "news"
+tracks/0/type = "value"
+tracks/0/path = NodePath("whitebar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.676268, -14.7183 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("whitebar:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("text:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Button:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("sur:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sur:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -75, -86.6667 ), Vector2( -75, -75 ), Vector2( -75, -65 ), Vector2( -75, -53.3333 ), Vector2( -75, -43.3333 ), Vector2( -75, -35 ), Vector2( -75, -28.3333 ), Vector2( -75, -21.6667 ), Vector2( -75, -16.6667 ), Vector2( -75, -11.6667 ), Vector2( -75, -8.33333 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("bienvenue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("chapatiz:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("bienvenue:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -73.8605, -61.9989 ), Vector2( -73.8605, -51.9989 ), Vector2( -73.8605, -43.6656 ), Vector2( -73.8605, -35.3322 ), Vector2( -73.8605, -26.9989 ), Vector2( -73.8605, -21.9989 ), Vector2( -73.8605, -16.9989 ), Vector2( -73.8605, -11.9989 ), Vector2( -73.8605, -8.66555 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("chapatiz:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -179.204, 159.277 ), Vector2( -179.204, 145.944 ), Vector2( -179.204, 129.277 ), Vector2( -179.204, 115.944 ), Vector2( -179.204, 100.944 ), Vector2( -179.204, 92.6105 ), Vector2( -179.204, 85.9438 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("dot:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("dot:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 1.1, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.40143, 97.489 ), Vector2( 5.68354, 95.8032 ), Vector2( 4.13078, 89.5817 ), Vector2( 5.58876, 96.1249 ), Vector2( -3.80562, 89.9176 ), Vector2( 4.52771, 93.2509 ), Vector2( 2.54802, 98.8569 ), Vector2( 2.54802, 98.8569 ), Vector2( 2.54802, 98.8569 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("dot:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.85287, 1.9149 ), Vector2( 2.1848, 2.57876 ), Vector2( 2.39662, 4.05753 ), Vector2( 2.66847, 5.00784 ), Vector2( 3.76681, 6.41822 ), Vector2( 4.08497, 7.1086 ), Vector2( 4.08497, 7.1086 ), Vector2( 4.38002, 8.93423 ), Vector2( 4, 7 ), Vector2( 4, 6 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("dot:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1, 1.3, 1.4, 1.5, 1.7, 1.8, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 60.0, -60.0, 175.0, 210.0, 270.0, 270.0, 270.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("whitebar:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/11/type = "method"
+tracks/11/path = NodePath("..")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 5, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "reversePlay"
+}, {
+"args": [  ],
+"method": "reversePlay"
+} ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Button:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("text:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_color = Color( 1, 0.298039, 0.721569, 1 )
+use_mipmaps = true
+use_filter = true
+extra_spacing_char = -3
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 34
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFontData" id=7]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+outline_size = 5
+outline_color = Color( 0.984314, 0.0705882, 0.631373, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 7 )
+
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 9 )
+
+[sub_resource type="DynamicFontData" id=11]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 11 )
+
+[sub_resource type="DynamicFontData" id=13]
+font_path = "res://assets/fonts/chimboheavy.ttf"
+
+[sub_resource type="DynamicFont" id=14]
+size = 23
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 13 )
+
+[node name="Screen" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="screen" type="Sprite" parent="."]
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="screen"]
+autoplay = "welcome"
+anims/news = SubResource( 1 )
+anims/welcome = SubResource( 2 )
+
+[node name="dot" type="Sprite" parent="screen"]
+visible = false
+position = Vector2( 2.54802, 98.8569 )
+rotation = 4.71239
+scale = Vector2( 4, 6 )
+texture = ExtResource( 70 )
+
+[node name="whitebar" type="Sprite" parent="screen"]
+position = Vector2( -0.676268, -14.7183 )
+texture = ExtResource( 71 )
+
+[node name="Label" type="Label" parent="screen/whitebar"]
+margin_left = -72.2258
+margin_top = -21.2179
+margin_right = 90.7742
+margin_bottom = 21.7821
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 1, 0.298039, 0.721569, 1 )
+text = "welcome"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sur" type="Label" parent="screen"]
+visible = false
+margin_left = -75.0
+margin_top = -86.6667
+margin_right = 79.0
+margin_bottom = 5.33333
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.266667, 0.454902, 0.819608, 1 )
+text = "
+sur"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bienvenue" type="Label" parent="screen"]
+visible = false
+margin_left = -73.8605
+margin_top = -8.66555
+margin_right = 80.1395
+margin_bottom = 83.3344
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.266667, 0.454902, 0.819608, 1 )
+text = "bienvenue
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="chapatiz" type="Label" parent="screen"]
+visible = false
+margin_left = -179.204
+margin_top = 85.9438
+margin_right = 116.796
+margin_bottom = 154.944
+custom_fonts/font = SubResource( 8 )
+text = "chapatiz"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="com" type="Label" parent="screen/chapatiz"]
+margin_left = 290.972
+margin_top = 31.0883
+margin_right = 354.972
+margin_bottom = 62.0883
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.984314, 0.0705882, 0.631373, 1 )
+text = ".com"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="retro" type="Label" parent="screen/chapatiz"]
+margin_left = 257.206
+margin_top = 55.0593
+margin_bottom = 81.0593
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.266667, 0.454902, 0.819608, 1 )
+text = "Rétro"
+
+[node name="text" type="Label" parent="screen"]
+margin_left = -212.667
+margin_top = 21.0
+margin_right = 205.333
+margin_bottom = 216.0
+custom_fonts/font = SubResource( 14 )
+custom_colors/font_color = Color( 0.2, 0.4, 0.8, 1 )
+text = "Le tchat est toujours en construction.
+Derniers ajout :
+
+- bactéria débutants
+- des objets peuvent tomber du ciel
+
+Cliquez sur ce texte pour rejoindre le
+ discord du projet"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="reflet" type="Sprite" parent="screen"]
+position = Vector2( -90.343, 88.2314 )
+scale = Vector2( 1, 0.995984 )
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="screen"]
+margin_left = -212.667
+margin_right = 205.333
+margin_bottom = 216.0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="animation_finished" from="screen/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="screen/Button" to="." method="_on_Button_pressed"]
