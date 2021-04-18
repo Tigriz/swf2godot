@@ -69,6 +69,8 @@ def importfile(item, output):
     f.close()
 
     f = open(f"output_{output}/assets/objects/{item.get('shapeId')}.png.tscn", "w")
+
+    # TODO
     f.write(f"""
     [gd_scene load_steps=2 format=2]
 
@@ -90,6 +92,7 @@ def importfile(item, output):
 
 def scene(output):
     f = open(f"output_{output}/rooms/{output}.tscn")
+    # TODO
     f.write(f"""
     [gd_scene load_steps=21 format=2]
 
