@@ -1,0 +1,108 @@
+
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://scripts/gate_to_deb/gate_to_deb.gd" type="Script" id=1]
+[ext_resource path="res://assets/sprites/gate_to_deb/1.png" type="PackedScene" id=2]
+[ext_resource path="res://assets/sprites/gate_to_deb/3.png" type="PackedScene" id=3]
+[ext_resource path="res://assets/sprites/gate_to_deb/8.png" type="PackedScene" id=4]
+[ext_resource path="res://assets/sprites/gate_to_deb/9.png" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/gate_to_deb/13.png" type="PackedScene" id=6]
+[ext_resource path="res://assets/sprites/gate_to_deb/17.png" type="PackedScene" id=7]
+[ext_resource path="res://assets/sprites/gate_to_deb/26.png" type="PackedScene" id=8]
+
+
+[node name="World" type="YSort"]
+script = ExtResource( 1 )
+
+[node name="Players" type="YSort" parent="."]
+z_index = 1
+
+[node name="Decor" type="YSort" parent="."]
+__meta__ = {
+    "_edit_lock_": trueidentifier
+}
+
+
+[node name="gate_to_deb_3" parent="Decor" instance=ExtResource( 3 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 144
+
+                
+[node name="gate_to_deb_4" parent="Decor" instance=ExtResource( 4 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 142
+
+                
+[node name="gate_to_deb_5" parent="Decor" instance=ExtResource( 5 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 88
+
+                
+[node name="gate_to_deb_6" parent="Decor" instance=ExtResource( 6 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 87
+
+                
+[node name="gate_to_deb_7" parent="Decor" instance=ExtResource( 7 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 84
+
+                
+[node name="gate_to_deb_8" parent="Decor" instance=ExtResource( 8 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 47
+
+                
+[node name="gate_to_deb_9" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( None, None )
+scale = Vector2( None, None )
+z_index = 1
+
+                
+
+[node name="chimbo_gate_to_gate_to_pro" type="Area2D" parent="."]
+position = Vector2( 0, -17 )
+z_index = 1
+__meta__ = {
+    "_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_pro"]
+position = Vector2( 768.021, 270.005 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="chimbo_gate_to_gate_to_deb" type="Area2D" parent="."]
+position = Vector2( 0, -17 )
+z_index = 1
+__meta__ = {
+    "_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_deb"]
+position = Vector2( 171.712, 268.868 )
+z_index = 1
+shape = SubResource( 1 )
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+__meta__ = {
+    "_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = 3
+polygon = PoolVector2Array( -453.406, -66.3559, 1359.52, -54.4639, 1187.51, 353.543, 1141, 345, 1054.07, 349.156, 980.069, 311.316, 802.005, 313.671, 781.986, 225.607, 735.481, 221.112, 735.625, 311.987, 620.631, 311.223, 614.974, 320.416, 598.602, 324.518, 586.261, 332.364, 352.882, 331.589, 333.136, 321.83, 322.53, 313.345, 199.222, 312.589, 204.956, 220.363, 155.512, 228.603, 142.027, 305.766, 113.492, 312.117, 28.5431, 317.309, -37.9076, 322.537, -72.9234, 335.714, -117.991, 343.672, -179.394, 352.348, -183.876, 412.223, -241.452, 421.662, -245, 530.095, -324, 552.095, -188.019, 779.869, 41.3271, 783.796, 80.9996, 738.123, 326.61, 738.123, 365.63, 1013.37, 651.807, 1007.38, 699.163, 921.973, 577.852, 884.383, 563.746, 861.782, 563.746, 840.4, 578.891, 815.01, 1229.47, 817.894, 1227.45, 683.017, 1226.51, 572.583, 1235.03, 526.907, 1258.84, 491.984, 1335.04, 474.523, 1298, 390, 1252, 388, 1234.35, 378.908, 1186, 354, 1241, 230, 1359.61, -40.9021, 1472.33, 229.348, 1555.44, 377.492, 1554.1, 589.874, 1555.69, 800.999, 1315.69, 895.317, 717.733, 1106.26, 169.352, 1103.27, 37.3226, 863.886, -516.636, 915.945, -515.807, -54.3342 )
+__meta__ = {
+    "_edit_lock_": true
+}
+
+[connection signal="body_entered" from="chimbo_gate_to_gate_to_pro" to="." method="_on_chimbo_gate_to_gate_to_pro_body_entered"]
+[connection signal="body_entered" from="chimbo_gate_to_gate_to_deb" to="." method="_on_chimbo_gate_to_gate_to_deb_body_entered"]
+
+        

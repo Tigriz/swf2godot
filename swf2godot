@@ -24,7 +24,9 @@ class shell:
     # Execute a simple shell command and communicating output
     def cmd(string, stdout=True):
         process = subprocess.Popen(
-            string.split(), stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, universal_newlines=True
+            string.split(),
+            stderr=subprocess.DEVNULL,
+            universal_newlines=True,
         )
         process.communicate()
 
@@ -44,16 +46,16 @@ class shell:
             print(f"{colors.WARNING}Warning: folders already exist{colors.END}")
 
         # Exporting to XML
-        print(f"{colors.INFO}Exporting to XML{colors.END}")
+        # print(f"{colors.INFO}Exporting to XML{colors.END}")
         shell.cmd(f"ffdec -cli -swf2xml {name}.swf output_{name}/{name}.xml")
 
     # Exporting a targeted sprite to PNG
-    def ffdec(swf, zoom, id, stdout):
+    def ffdec(swf, zoom, id, stdout=True):
         if stdout:
             print(f"{colors.INFO}Exporting element {id} to PNG{colors.END}")
         shell.cmd(
             f"ffdec -cli -format shape:png,sprite:png -zoom {zoom} -selectid {id} -export shape,sprite output_{swf}/assets/sprites/{swf} {swf}.swf",
-            stdout
+            stdout,
         )
 
     # Optional optimization by indexing colors
@@ -65,7 +67,7 @@ class shell:
 # xml
 class xml:
     # Parsing function and extracting scene
-    def parse(xml):
+    def scene(xml):
         return (
             etree.parse(f"output_{xml}/{xml}.xml")
             .xpath("/swf/tags/item/subTags/item[@name='template_character']")[0]
@@ -73,22 +75,32 @@ class xml:
             .getparent()
         )
 
+    def collclip(xml):
+        return (
+            etree.parse(f"output_{xml}/{xml}.xml")
+            .xpath("/swf/tags/item[@name='collclip']")[0]
+            .getparent()
+            .getparent()
+        )
+
 
 # importfile
 class godot:
-    def importfile(output, item):
-        item.get("shapeId")
-        if item == "shape":
+    def type(name, item):
+        print("bite")
+
+    def importfile(name, item):
+        if godot.type(name, item) == "shape":
             print(
                 f"{colors.HEADER}Creating godot files for {item.get('shapeId')}{colors.END}"
             )
-        if item == "sprite":
+        else:
             print(
-                f"{colors.HEADER}Creating godot files for {item.get('shapeId')}{colors.END}"
+                f"{colors.HEADER}Creating godot files for {item.get('spriteId')}{colors.END}"
             )
 
         f = open(
-            f"output_{output}/assets/sprites/{output}/{item.get('shapeId')}.png.import",
+            f"output_{name}/assets/sprites/{name}/{item.get('shapeId')}.png.import",
             "w",
         )
         f.write(
@@ -132,13 +144,13 @@ svg/scale=1.0
         f.close()
 
         # Always prefer importing objects (packed scene)
-        f = open(f"output_{output}/assets/objects/{item.get('shapeId')}.png.tscn", "w")
+        f = open(f"output_{name}/assets/objects/{item.get('shapeId')}.png.tscn", "w")
 
         f.write(
             f"""
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=2 format=2]xml.scene(file.stem)
 
-[ext_resource path="res://assets/sprites/{output}/{item.get('shapeId')}.png" type="Texture" id=1]
+[ext_resource path="res://assets/sprites/{name}/{item.get('shapeId')}.png" type="Texture" id=1]
 
 [node name="{item.get('shapeId')}" type="Node2D"]
 
@@ -155,21 +167,25 @@ texture = ExtResource( 1 )
         i = 2
         last = "-1"
         for child in parent[0]:
-            print(f"{colors.NOTE}Child element {i-1}/{len(parent[0])}{colors.END}", end = "\r")
+            print(
+                f"{colors.NOTE}Child element {i-1}/{len(parent[0])}{colors.END}",
+                end="\n",
+            )
             if child.get("characterId") == None:
                 break
             if last != child.get("characterId"):
-                shell.ffdec(name, zoom, child.get("characterId"), False)
-                # if child == "shape":
-                #    imports += f"[ext_resource path=\"res://assets/sprites/{name}/{child}.png\" type=\"Texture\" id={i}]\n"
-                # if child == "sprite":
-                imports += f'[ext_resource path="res://assets/sprites/{name}/{child}.png" type="PackedScene" id={i}]\n'
+                shell.ffdec(name, zoom, child.get("characterId"))
+                #godot.importfile(name, child)
+                #if godot.type(name, child) == "shape":
+                #    imports += f'[ext_resource path="res://assets/sprites/{name}/{child}.png" type="Texture" id={i}]\n'
+                #else:
+                imports += f'[ext_resource path="res://assets/sprites/{name}/{child.get("characterId")}.png" type="PackedScene" id={i}]\n'
                 i += 1
                 elements += f"""
-    [node name="{name}_{i}" parent="Decor" instance=ExtResource( {i} )]
-    position = Vector2( {child.get('translateX')}, {child.get('translateYargs')} )
-    scale = Vector2( {child.get('scaleX')}, {child.get('scaleY')} )
-    z_index = {child.get('depth')}
+[node name="{name}_{i}" parent="Decor" instance=ExtResource( {i} )]
+position = Vector2( {child.get('translateX')}, {child.get('translateY')} )
+scale = Vector2( {child.get('scaleX')}, {child.get('scaleY')} )
+z_index = {child.get('depth')}
 
                 """
                 last = child.get("characterId")
@@ -178,86 +194,69 @@ texture = ExtResource( 1 )
         # TODO
         f.write(
             f"""
-    [gd_scene load_steps=21 format=2]
+[gd_scene load_steps=21 format=2]
 
-    [ext_resource path="res://scripts/{name}/{name}.gd" type="Script" id=1]
-    {imports}
+[ext_resource path="res://scripts/{name}/{name}.gd" type="Script" id=1]
+{imports}
 
-    [node name="World" type="YSort"]
-    script = ExtResource( 1 )
+[node name="World" type="YSort"]
+script = ExtResource( 1 )
 
-    [node name="Players" type="YSort" parent="."]
-    z_index = 1
+[node name="Players" type="YSort" parent="."]
+z_index = 1
 
-    [node name="Decor" type="YSort" parent="."]
-    __meta__ = {{
-        "_edit_lock_": trueidentifier
-    }}
+[node name="Decor" type="YSort" parent="."]
+__meta__ = {{
+    "_edit_lock_": trueidentifier
+}}
 
-    {elements}
+{elements}
 
-    [node name="chimbo_gate_to_gate_to_pro" type="Area2D" parent="."]
-    position = Vector2( 0, -17 )
-    z_index = 1
-    __meta__ = {{
-        "_edit_lock_": true
-    }}
+[node name="chimbo_gate_to_gate_to_pro" type="Area2D" parent="."]
+position = Vector2( 0, -17 )
+z_index = 1
+__meta__ = {{
+    "_edit_lock_": true
+}}
 
-    [node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_pro"]
-    position = Vector2( 768.021, 270.005 )
-    z_index = 1
-    shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_pro"]
+position = Vector2( 768.021, 270.005 )
+z_index = 1
+shape = SubResource( 1 )
 
-    [node name="chimbo_gate_to_gate_to_deb" type="Area2D" parent="."]
-    position = Vector2( 0, -17 )
-    z_index = 1
-    __meta__ = {{
-        "_edit_lock_": true
-    }}
+[node name="chimbo_gate_to_gate_to_deb" type="Area2D" parent="."]
+position = Vector2( 0, -17 )
+z_index = 1
+__meta__ = {{
+    "_edit_lock_": true
+}}
 
-    [node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_deb"]
-    position = Vector2( 171.712, 268.868 )
-    z_index = 1
-    shape = SubResource( 1 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chimbo_gate_to_gate_to_deb"]
+position = Vector2( 171.712, 268.868 )
+z_index = 1
+shape = SubResource( 1 )
 
-    [node name="Area2D" type="StaticBody2D" parent="."]
-    __meta__ = {{
-        "_edit_lock_": true
-    }}
+[node name="Area2D" type="StaticBody2D" parent="."]
+__meta__ = {{
+    "_edit_lock_": true
+}}
 
-    [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-    z_index = 3
-    polygon = PoolVector2Array( -453.406, -66.3559, 1359.52, -54.4639, 1187.51, 353.543, 1141, 345, 1054.07, 349.156, 980.069, 311.316, 802.005, 313.671, 781.986, 225.607, 735.481, 221.112, 735.625, 311.987, 620.631, 311.223, 614.974, 320.416, 598.602, 324.518, 586.261, 332.364, 352.882, 331.589, 333.136, 321.83, 322.53, 313.345, 199.222, 312.589, 204.956, 220.363, 155.512, 228.603, 142.027, 305.766, 113.492, 312.117, 28.5431, 317.309, -37.9076, 322.537, -72.9234, 335.714, -117.991, 343.672, -179.394, 352.348, -183.876, 412.223, -241.452, 421.662, -245, 530.095, -324, 552.095, -188.019, 779.869, 41.3271, 783.796, 80.9996, 738.123, 326.61, 738.123, 365.63, 1013.37, 651.807, 1007.38, 699.163, 921.973, 577.852, 884.383, 563.746, 861.782, 563.746, 840.4, 578.891, 815.01, 1229.47, 817.894, 1227.45, 683.017, 1226.51, 572.583, 1235.03, 526.907, 1258.84, 491.984, 1335.04, 474.523, 1298, 390, 1252, 388, 1234.35, 378.908, 1186, 354, 1241, 230, 1359.61, -40.9021, 1472.33, 229.348, 1555.44, 377.492, 1554.1, 589.874, 1555.69, 800.999, 1315.69, 895.317, 717.733, 1106.26, 169.352, 1103.27, 37.3226, 863.886, -516.636, 915.945, -515.807, -54.3342 )
-    __meta__ = {{
-        "_edit_lock_": true
-    }}
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+z_index = 3
+polygon = PoolVector2Array( -453.406, -66.3559, 1359.52, -54.4639, 1187.51, 353.543, 1141, 345, 1054.07, 349.156, 980.069, 311.316, 802.005, 313.671, 781.986, 225.607, 735.481, 221.112, 735.625, 311.987, 620.631, 311.223, 614.974, 320.416, 598.602, 324.518, 586.261, 332.364, 352.882, 331.589, 333.136, 321.83, 322.53, 313.345, 199.222, 312.589, 204.956, 220.363, 155.512, 228.603, 142.027, 305.766, 113.492, 312.117, 28.5431, 317.309, -37.9076, 322.537, -72.9234, 335.714, -117.991, 343.672, -179.394, 352.348, -183.876, 412.223, -241.452, 421.662, -245, 530.095, -324, 552.095, -188.019, 779.869, 41.3271, 783.796, 80.9996, 738.123, 326.61, 738.123, 365.63, 1013.37, 651.807, 1007.38, 699.163, 921.973, 577.852, 884.383, 563.746, 861.782, 563.746, 840.4, 578.891, 815.01, 1229.47, 817.894, 1227.45, 683.017, 1226.51, 572.583, 1235.03, 526.907, 1258.84, 491.984, 1335.04, 474.523, 1298, 390, 1252, 388, 1234.35, 378.908, 1186, 354, 1241, 230, 1359.61, -40.9021, 1472.33, 229.348, 1555.44, 377.492, 1554.1, 589.874, 1555.69, 800.999, 1315.69, 895.317, 717.733, 1106.26, 169.352, 1103.27, 37.3226, 863.886, -516.636, 915.945, -515.807, -54.3342 )
+__meta__ = {{
+    "_edit_lock_": true
+}}
 
-    [connection signal="body_entered" from="chimbo_gate_to_gate_to_pro" to="." method="_on_chimbo_gate_to_gate_to_pro_body_entered"]
-    [connection signal="body_entered" from="chimbo_gate_to_gate_to_deb" to="." method="_on_chimbo_gate_to_gate_to_deb_body_entered"]
+[connection signal="body_entered" from="chimbo_gate_to_gate_to_pro" to="." method="_on_chimbo_gate_to_gate_to_pro_body_entered"]
+[connection signal="body_entered" from="chimbo_gate_to_gate_to_deb" to="." method="_on_chimbo_gate_to_gate_to_deb_body_entered"]
 
         """
         )
 
-        # Script draft
-        f.close()
-
-        f = open(f"output_{name}/scripts/{name}/{name}.gd", "w")
-        f.write(
-            f"""
-        extends YSort
-
-        var droppedItems = []
-        export var roomName = "{name}"
-
-        func _ready():
-            Global.sendRoomReady()
-
-        func _on_{name}_to_{name}_entered(body):
-            if body.get_name() == Global.myPlayerId:
-                Global.goTo("{name}")
-        """
-        )
-        f.close()
+    # Exporting collision map
+    def collclip():
+        print("salut")
 
 
 def main():
@@ -270,10 +269,15 @@ def main():
         "file", metavar="file", type=pathlib.Path, nargs="+", help="targeted .swf file"
     )
     parser.add_argument(
-        "--zoom", "-z", dest="zoom", default=4, help="set resolution of assets (default: 4)"
+        "--zoom",
+        "-z",
+        dest="zoom",
+        default=4,
+        help="set resolution of assets (default: 4)",
     )
     parser.add_argument(
-        "--optimize", "-o",
+        "--optimize",
+        "-o",
         dest="optimize",
         action=argparse.BooleanOptionalAction,
         help="use ImageMagick to reduce assets size (default: false)",
@@ -289,9 +293,7 @@ def main():
     args = parser.parse_args()
 
     print(
-        f"""{colors.HEADER}
-█▀ █░█░█ █▀▀ ▀█ █▀▀ █▀█ █▀▄ █▀█ ▀█▀
-▄█ ▀▄▀▄▀ █▀░ █▄ █▄█ █▄█ █▄▀ █▄█ ░█░{colors.END}\n"""
+        f"""{colors.HEADER}█▀ █░█░█ █▀▀ ▀█ █▀▀ █▀█ █▀▄ █▀█ ▀█▀\n▄█ ▀▄▀▄▀ █▀░ █▄ █▄█ █▄█ █▄▀ █▄█ ░█░{colors.END}\n"""
     )
 
     for file in args.file:
@@ -299,17 +301,24 @@ def main():
             if not file.exists():
                 raise RuntimeError
 
-            print(f"{colors.HEADER}{colors.BOLD}› Converting {file} (zoom: {args.zoom}{', optimize' if args.optimize else ''}{', verbose' if args.verbose else ''}){colors.END}")
+            print(
+                f"{colors.HEADER}{colors.BOLD}› Converting {file} (zoom: {args.zoom}{', optimize' if args.optimize else ''}{', verbose' if args.verbose else ''}){colors.END}"
+            )
             print(f"{colors.HEADER}{colors.BOLD}› Setting up output folder{colors.END}")
             shell.setup(file.stem)
 
-            print(f"{colors.HEADER}{colors.BOLD}› Creating Godot scene{colors.END}")
-            godot.scene(xml.parse(file.stem), args.zoom, file.stem)
+            parent = xml.scene(file.stem)
+            print(
+                f"{colors.HEADER}{colors.BOLD}› Creating Godot scene (id: {parent.get('spriteId')}){colors.END}"
+            )
+            godot.scene(parent, args.zoom, file.stem)
 
             if args.optimize:
                 print(f"{colors.HEADER}{colors.BOLD}› Optimizing images{colors.END}")
 
-            print(f"{colors.OK}{colors.BOLD}› {file} successfully converted{colors.END}\n")
+            print(
+                f"{colors.OK}{colors.BOLD}› {file} successfully converted{colors.END}\n"
+            )
         except RuntimeError:
             print(
                 f"{colors.FAIL}{colors.BOLD}Error: {file} does not exist.{colors.END}\n"
@@ -317,6 +326,7 @@ def main():
             continue
         except:
             print(f"\n{colors.FAIL}{colors.BOLD}› {file} error{colors.END}")
+
 
 # Main execution as a script
 if __name__ == "__main__":
