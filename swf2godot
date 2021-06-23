@@ -3,6 +3,7 @@
 from lxml import etree
 import subprocess
 import pathlib
+import struct
 import os
 import argparse
 from os import walk
@@ -60,26 +61,7 @@ class shell:
             f"ffdec -cli -format shape:png,sprite:png -zoom {zoom} -selectid {id} -export shape,sprite output_{swf}/assets/sprites/{swf} {swf}.swf",
             stdout,
         )
-
         process.wait()
-
-        for root, dirs, files in os.walk(f"output_{swf}/assets/sprites/{swf}"):
-            if len(files) == 1:
-                try:
-                    print(root,dirs,files)
-                    shell.cmd(
-                        f"mv {os.path.join(root, files[0])} output_{swf}/assets/sprites/{swf}/{id}.png"
-                    )
-                except:
-                    print("Erreur")
-            else:
-                try:
-                    print(root,dirs,files)
-                    shell.cmd(
-                        f"mv {os.path.join(root, dirs[0])} output_{swf}/assets/sprites/{swf}/{id}"
-                    )
-                except:
-                    print("Erreur")
 
     # Optional optimization by indexing colors
     def optimize(image):
@@ -109,7 +91,7 @@ class xml:
 
 # importfile
 class godot:
-    def importfile(name, item):
+    def importfile(name, zoom, item):
         print(
             f"{colors.NOTE}Creating godot files for {item.get('characterId')}{colors.END}"
         )
@@ -120,21 +102,16 @@ class godot:
         )
         f.write(
             f"""[remap]
-
 importer="texture"
 type="StreamTexture"
 path="res://.import/{item.get("characterId")}.png-0.stex"
 metadata={{
 "vram_texture": false
 }}
-
 [deps]
-
 source_file="res://output_{name}/assets/sprites/{name}/{item.get("characterId")}.png"
 dest_files=[ "res://.import/{item.get("characterId")}.png-0.stex" ]
-
 [params]
-
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
@@ -159,12 +136,12 @@ svg/scale=1.0
 
         # Always prefer importing objects (packed scene)
         f = open(
-            f"output_{name}/assets/objects/{name}/{item.get('characterId')}.png.tscn",
+            f"output_{name}/assets/objects/{name}/{item.get('characterId')}.tscn",
             "w",
         )
 
         f.write(
-            f"""[gd_scene load_steps=2 format=2]
+            f"""[gd_scene load_steps=1 format=2]
 
 [ext_resource path="res://output_{name}/assets/sprites/{name}/{item.get('characterId')}.png" type="Texture" id=1]
 
@@ -172,7 +149,8 @@ svg/scale=1.0
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-        """
+scale = Vector2( {1 / int(zoom)}, {1 / int(zoom)} )
+"""
         )
         f.close()
 
@@ -195,23 +173,63 @@ texture = ExtResource( 1 )
 
             if last != child.get("characterId"):
                 shell.ffdec(name, zoom, child.get("characterId"))
-                godot.importfile(name, child)
-                imports += f'[ext_resource path="res://output_{name}/assets/objects/{name}/{child.get("characterId")}.png.tscn" type="PackedScene" id={i}]\n'
-                elements += f"""
-[node name="{name}_{i}" parent="Decor" instance=ExtResource( {i} )]
-position = Vector2( {int(child[0].get('translateX'))/zoom}, {int(child[0].get('translateY'))/zoom} )
-scale = Vector2( 1, 1 )
-z_index = {child.get('depth')}"""
-                i += 1
+                godot.importfile(name, zoom, child)
                 last = child.get("characterId")
+            try:
+                imports += f'[ext_resource path="res://output_{name}/assets/objects/{name}/{child.get("characterId")}.tscn" type="PackedScene" id={i}]\n'
+                elements += f"""
+[node name="{name}_{i}" parent="Decor" instance=ExtResource( { i } )]
+position = Vector2( { int(child[0].get('translateX')) / 20 }, { int(child[0].get('translateY')) / 20 } )
+scale = Vector2( {(1, int(child[0].get('scaleX')))[int(child[0].get('scaleX')) == 0]}, {(1, int(child[0].get('scaleY')))[int(child[0].get('scaleY')) == 0]} )
+z_index = {child.get('depth')}"""
+            except:
+                print("Error import")
+            i += 1
 
-        ### moving files to good spot
+            # moving files
+            for root, dirs, files in os.walk(f"output_{name}/assets/sprites/{name}/sprites/DefineSprite_{child.get('characterId')}"):
+                if len(files) == 1:
+                    try:
+                        shell.cmd(
+                            f'mv {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                        )
+                    except:
+                        print("Error mv sprites")
+                else:
+                    try:
+                        shell.cmd(
+                            f'cp {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                        )
+                        shell.cmd(
+                            f'mv {os.path.join(root)} output_{name}/assets/sprites/{name}/{child.get("characterId")}'
+                        )
+                    except:
+                        print("Error mv multiple sprites")
 
-        #### SCENE FILE
+            try:
+                shell.cmd(
+                    f'mv output_{name}/assets/sprites/{name}/shapes/{child.get("characterId")}.png output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                )
+            except:
+                print("Erreur mv shapes")
+
+        try:
+            shell.cmd(
+                f'rm -r output_{name}/assets/sprites/{name}/shapes'
+            )
+        except:
+            print("Error removing shapes")
+
+        try:
+            shell.cmd(
+                f'rm -r output_{name}/assets/sprites/{name}/sprites'
+            )
+        except:
+            print("Error removing sprites")
+
         f = open(f"output_{name}/rooms/{name}.tscn", "w")
-        # TODO
         f.write(
-            f"""[gd_scene load_steps=2 format=2]
+            f"""[gd_scene load_steps=1 format=2]
 
 [ext_resource path="res://output_{name}/scripts/{name}/{name}.gd" type="Script" id=1]
 {imports}

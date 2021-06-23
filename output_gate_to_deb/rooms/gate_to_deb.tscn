@@ -1,13 +1,20 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=1 format=2]
 
 [ext_resource path="res://output_gate_to_deb/scripts/gate_to_deb/gate_to_deb.gd" type="Script" id=1]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/1.png.tscn" type="PackedScene" id=2]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/3.png.tscn" type="PackedScene" id=3]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/8.png.tscn" type="PackedScene" id=4]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/9.png.tscn" type="PackedScene" id=5]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.png.tscn" type="PackedScene" id=6]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/17.png.tscn" type="PackedScene" id=7]
-[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/26.png.tscn" type="PackedScene" id=8]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/8.tscn" type="PackedScene" id=6]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/9.tscn" type="PackedScene" id=7]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=8]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=9]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=10]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=11]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=12]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/13.tscn" type="PackedScene" id=13]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/17.tscn" type="PackedScene" id=14]
+[ext_resource path="res://output_gate_to_deb/assets/objects/gate_to_deb/26.tscn" type="PackedScene" id=15]
 
 
 [node name="World" type="YSort"]
@@ -23,30 +30,58 @@ __meta__ = {
 
 
 [node name="gate_to_deb_2" parent="Decor" instance=ExtResource( 2 )]
-position = Vector2( 4804.75, 3444.25 )
-scale = Vector2( 1, 1 )
+position = Vector2( 960.95, 688.85 )
+scale = Vector2( 0, 0 )
 z_index = 144
 [node name="gate_to_deb_3" parent="Decor" instance=ExtResource( 3 )]
-position = Vector2( 5019.5, 1323.75 )
-scale = Vector2( 1, 1 )
+position = Vector2( 1003.9, 264.75 )
+scale = Vector2( 0, 0 )
 z_index = 142
 [node name="gate_to_deb_4" parent="Decor" instance=ExtResource( 4 )]
-position = Vector2( 2860.5, 2143.25 )
-scale = Vector2( 1, 1 )
-z_index = 88
+position = Vector2( 120.65, 294.25 )
+scale = Vector2( 0, 0 )
+z_index = 140
 [node name="gate_to_deb_5" parent="Decor" instance=ExtResource( 5 )]
-position = Vector2( 0.0, 0.0 )
-scale = Vector2( 1, 1 )
-z_index = 87
+position = Vector2( 467.15, 325.05 )
+scale = Vector2( 0, 0 )
+z_index = 138
 [node name="gate_to_deb_6" parent="Decor" instance=ExtResource( 6 )]
-position = Vector2( 3237.25, 1748.25 )
+position = Vector2( 572.1, 428.65 )
+scale = Vector2( 0, 0 )
+z_index = 88
+[node name="gate_to_deb_7" parent="Decor" instance=ExtResource( 7 )]
+position = Vector2( 0.0, 0.0 )
+scale = Vector2( 0, 0 )
+z_index = 87
+[node name="gate_to_deb_8" parent="Decor" instance=ExtResource( 8 )]
+position = Vector2( 647.45, 349.65 )
 scale = Vector2( 1, 1 )
 z_index = 84
-[node name="gate_to_deb_7" parent="Decor" instance=ExtResource( 7 )]
-position = Vector2( 2681.5, 2340.25 )
+[node name="gate_to_deb_9" parent="Decor" instance=ExtResource( 9 )]
+position = Vector2( 695.45, 330.65 )
 scale = Vector2( 1, 1 )
+z_index = 81
+[node name="gate_to_deb_10" parent="Decor" instance=ExtResource( 10 )]
+position = Vector2( 510.65, 364.85 )
+scale = Vector2( 1, 1 )
+z_index = 78
+[node name="gate_to_deb_11" parent="Decor" instance=ExtResource( 11 )]
+position = Vector2( 873.3, 362.7 )
+scale = Vector2( 1, 1 )
+z_index = 75
+[node name="gate_to_deb_12" parent="Decor" instance=ExtResource( 12 )]
+position = Vector2( 474.5, 317.65 )
+scale = Vector2( 1, 1 )
+z_index = 72
+[node name="gate_to_deb_13" parent="Decor" instance=ExtResource( 13 )]
+position = Vector2( 456.45, 315.75 )
+scale = Vector2( 1, 1 )
+z_index = 69
+[node name="gate_to_deb_14" parent="Decor" instance=ExtResource( 14 )]
+position = Vector2( 536.3, 468.05 )
+scale = Vector2( 0, 0 )
 z_index = 47
-[node name="gate_to_deb_8" parent="Decor" instance=ExtResource( 8 )]
-position = Vector2( -260.25, 1505.75 )
-scale = Vector2( 1, 1 )
+[node name="gate_to_deb_15" parent="Decor" instance=ExtResource( 15 )]
+position = Vector2( -52.05, 301.15 )
+scale = Vector2( 0, 0 )
 z_index = 1

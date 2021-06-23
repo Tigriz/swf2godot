@@ -1,19 +1,14 @@
 [remap]
-
 importer="texture"
 type="StreamTexture"
-path="res://.import/26.png-0f3d5d41acf761a6ece8fd2ee3375637.stex"
+path="res://.import/26.png-0.stex"
 metadata={
 "vram_texture": false
 }
-
 [deps]
-
 source_file="res://output_gate_to_deb/assets/sprites/gate_to_deb/26.png"
-dest_files=[ "res://.import/26.png-0f3d5d41acf761a6ece8fd2ee3375637.stex" ]
-
+dest_files=[ "res://.import/26.png-0.stex" ]
 [params]
-
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
@@ -32,3 +27,4 @@ stream=false
 size_limit=0
 detect_3d=true
 svg/scale=1.0
+        
