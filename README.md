@@ -1,4 +1,4 @@
 # swf2godot
-usage: swf2godot target.swf zoom_level
+How to use with `swf2godot -h`
 
 ffdec is required

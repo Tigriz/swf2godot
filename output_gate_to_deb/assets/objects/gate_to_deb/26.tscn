@@ -1,9 +1,0 @@
-[gd_scene load_steps=1 format=2]
-
-[ext_resource path="res://output_gate_to_deb/assets/sprites/gate_to_deb/26.png" type="Texture" id=1]
-
-[node name="26" type="Node2D"]
-
-[node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-scale = Vector2( 1.0, 1.0 )
