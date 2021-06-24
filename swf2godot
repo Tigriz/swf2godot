@@ -121,7 +121,12 @@ scale = Vector2( {1 / int(zoom)}, {1 / int(zoom)} )
     # scene
     def scene(parent, zoom, name):
         # Model
-        shell.ffdec(name, zoom, parent.get("spriteId"))
+        print(f"{colors.INFO}Exporting model to PNG{colors.END}")
+        process = shell.cmd(
+            f"ffdec -cli -format shape:png,sprite:png -zoom 1 -select 1 -selectid {parent.get('spriteId')} -export shape,sprite output_{name}/assets/sprites/{name} {name}.swf"
+        )
+        process.wait()
+
         f = open(
             f"output_{name}/assets/objects/{name}/{parent.get('spriteId')}.tscn",
             "w",
@@ -136,7 +141,6 @@ scale = Vector2( {1 / int(zoom)}, {1 / int(zoom)} )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-scale = Vector2( {1 / int(zoom)}, {1 / int(zoom)} )
 """
         )
         f.close()
@@ -273,20 +277,6 @@ def parser():
         default=4,
         help="set resolution of assets (default: 4)",
     )
-    parser.add_argument(
-        "--optimize",
-        "-o",
-        dest="optimize",
-        action=argparse.BooleanOptionalAction,
-        help="use ImageMagick to reduce assets size (default: false)",
-    )
-    parser.add_argument(
-        "--verbose",
-        "-v",
-        dest="verbose",
-        action=argparse.BooleanOptionalAction,
-        help="enable verbose logs",
-    )
     return parser
 
 
@@ -303,7 +293,7 @@ def main():
                 raise RuntimeError
 
             print(
-                f"{colors.HEADER}{colors.BOLD}› Converting {file} (zoom: {args.zoom}{', optimize' if args.optimize else ''}{', verbose' if args.verbose else ''}){colors.END}"
+                f"{colors.HEADER}{colors.BOLD}› Converting {file} (zoom: {args.zoom}){colors.END}"
             )
             print(f"{colors.HEADER}{colors.BOLD}› Setting up output folder{colors.END}")
             shell.setup(file.stem)
@@ -313,9 +303,6 @@ def main():
                 f"{colors.HEADER}{colors.BOLD}› Creating Godot scene (id: {parent.get('spriteId')}){colors.END}"
             )
             godot.scene(parent, args.zoom, file.stem)
-
-            if args.optimize:
-                print(f"{colors.HEADER}{colors.BOLD}› Optimizing images{colors.END}")
 
             print(
                 f"{colors.OK}{colors.BOLD}› {file} successfully converted{colors.END}\n"
