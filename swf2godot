@@ -167,50 +167,49 @@ texture = ExtResource( 1 )
                 end="\n",
             )
 
-            if child.get("characterId") == None:
-                break
+            if child.get("characterId") != None:
 
-            if last != child.get("characterId"):
-                shell.ffdec(name, zoom, child.get("characterId"))
-                godot.importfile(name, zoom, child)
-                last = child.get("characterId")
-            try:
-                imports += f'[ext_resource path="res://output_{name}/assets/objects/{name}/{child.get("characterId")}.tscn" type="PackedScene" id={i}]\n'
-                elements += f"""
+                if last != child.get("characterId"):
+                    shell.ffdec(name, zoom, child.get("characterId"))
+                    godot.importfile(name, zoom, child)
+                    last = child.get("characterId")
+                try:
+                    imports += f'[ext_resource path="res://output_{name}/assets/objects/{name}/{child.get("characterId")}.tscn" type="PackedScene" id={i}]\n'
+                    elements += f"""
 [node name="{name}_{i}" parent="Decor" instance=ExtResource( { i } )]
 position = Vector2( { int(child[0].get('translateX')) / 20 }, { int(child[0].get('translateY')) / 20 } )
 scale = Vector2( {(1, int(child[0].get('scaleX')) / 65535)[int(child[0].get('scaleX')) != 0]}, {(1, int(child[0].get('scaleY')) / 65535)[int(child[0].get('scaleY')) != 0]} )
 z_index = {child.get('depth')}"""
-            except:
-                print("Error import")
-            i += 1
+                except:
+                    print("Error import")
+                i += 1
 
-            # moving files
-            for root, dirs, files in os.walk(f"output_{name}/assets/sprites/{name}/sprites/DefineSprite_{child.get('characterId')}"):
-                if len(files) == 1:
-                    try:
-                        shell.cmd(
-                            f'mv {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
-                        )
-                    except:
-                        print("Error mv sprites")
-                else:
-                    try:
-                        shell.cmd(
-                            f'cp {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
-                        )
-                        shell.cmd(
-                            f'mv {os.path.join(root)} output_{name}/assets/sprites/{name}/{child.get("characterId")}'
-                        )
-                    except:
-                        print("Error mv multiple sprites")
+                # moving files
+                for root, dirs, files in os.walk(f"output_{name}/assets/sprites/{name}/sprites/DefineSprite_{child.get('characterId')}"):
+                    if len(files) == 1:
+                        try:
+                            shell.cmd(
+                                f'mv {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                            )
+                        except:
+                            print("Error mv sprites")
+                    else:
+                        try:
+                            shell.cmd(
+                                f'cp {os.path.join(root, files[0])} output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                            )
+                            shell.cmd(
+                                f'mv {os.path.join(root)} output_{name}/assets/sprites/{name}/{child.get("characterId")}'
+                            )
+                        except:
+                            print("Error mv multiple sprites")
 
-            try:
-                shell.cmd(
-                    f'mv output_{name}/assets/sprites/{name}/shapes/{child.get("characterId")}.png output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
-                )
-            except:
-                print("Error mv shapes")
+                try:
+                    shell.cmd(
+                        f'mv output_{name}/assets/sprites/{name}/shapes/{child.get("characterId")}.png output_{name}/assets/sprites/{name}/{child.get("characterId")}.png'
+                    )
+                except:
+                    print("Error mv shapes")
 
         try:
             shell.cmd(
@@ -241,6 +240,10 @@ __meta__ = {{
 
 [node name="Model" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 0 )
+z_index = 10000
+__meta__ = {{
+"_edit_lock_": true
+}}
 
 {elements}""")
 
