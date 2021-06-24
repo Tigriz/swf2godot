@@ -1,2 +1,7 @@
 .vscode
 .import
+output_*
+*.swf
+rooms
+scripts
+assets
