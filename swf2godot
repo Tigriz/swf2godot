@@ -113,7 +113,7 @@ class godot:
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
-scale = Vector2( {1 / int(zoom)}, {1 / int(zoom)} )
+scale = Vector2( {1 / float(zoom)}, {1 / float(zoom)} )
 """
         )
         f.close()
@@ -262,7 +262,7 @@ func _ready():
 
     # Exporting collision map
     def collclip():
-        print("salut")
+        print("Exporting collclip")
 
 
 def parser():
